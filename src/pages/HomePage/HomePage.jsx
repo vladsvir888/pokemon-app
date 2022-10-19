@@ -15,7 +15,7 @@ const HomePage = () => {
                     <div className={styles.main__item}>
                         <img className={styles.main__img} src={reviewImg} alt="" />
                         <h2 className={styles.main__heading}>
-                            <Link className={styles.main__link} to="/review">
+                            <Link className={styles.main__link} to="/overview">
                                 Pokémon Overview
                             </Link>
                         </h2>

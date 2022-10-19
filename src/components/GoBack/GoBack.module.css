@@ -1,0 +1,26 @@
+.go__back {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.go__back:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.go__back::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url('../../img/back.svg');
+    content: '';
+}
+
+.go__back span {
+    padding-left: 20px;
+}

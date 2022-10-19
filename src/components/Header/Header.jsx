@@ -4,20 +4,13 @@ import cn from 'classnames';
 import Logo from '../Logo';
 import NavMenu from '../NavMenu/NavMenu';
 
+import { HEADER_NAV_ITEMS } from '../../constants';
+
 import styles from './Header.module.css';
 
 import logo from '../../img/pokemon-logo.svg';
 
 const Header = () => {
-    const navItems = [{
-        text: "Home",
-        to: "/",
-        end: true
-    }, {
-        text: "Search",
-        to: "/search"
-    }];
-
     return (
         <header className="header">
             <div className={cn("container", styles.container)}>
@@ -27,7 +20,7 @@ const Header = () => {
                     text="Home" 
                     sizes={{width: 200, height: 75}} 
                 />
-                <NavMenu items={navItems} />
+                <NavMenu items={HEADER_NAV_ITEMS} />
             </div>
         </header>
     );

@@ -1,12 +1,20 @@
 :root {
   /* pallette */
-  --pallette-matisse: #19548f;
   --pallette-supernova: #ffcb05;
+  --pallette-alabaster: #f8f8f8;
   --pallette-white: #fff;
+  --pallette-black: #000;
 
   /* transitions */
   --transition: 0.3s;
-  --transition-second: 0.5s;
+  --transition-2: 0.5s;
+
+  /* offsets */
+  --offset20: 20px;
+  --offset40: 40px;
+
+  /* border-radius */
+  --bdrs10: 10px;
 }
 
 *,
@@ -60,13 +68,13 @@ a[class] {
 }
 
 :focus-visible {
-  outline: 2px dotted #000;
+  outline: 2px dotted var(--pallette-black);
 }
 
 body {
   height: 100%;
   font-family: 'Open Sans', sans-serif;
-  background-color: var(--pallette-matisse);
+  background-color: var(--pallette-alabaster);
 }
 
 .visually-hidden {
@@ -110,4 +118,13 @@ body {
   .main {
     margin-top: 40px;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--pallette-supernova);
+  border-radius: var(--bdrs10);
 }

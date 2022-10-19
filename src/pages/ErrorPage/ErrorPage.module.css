@@ -7,9 +7,7 @@
 .error__heading {
     font-size: 160px;
     text-align: center;
-    color: transparent;
-    background: linear-gradient(240deg, var(--pallette-supernova) 50%, var(--pallette-white) 50%);
-    background-clip: text;
+    color: var(--pallette-supernova);
 }
 
 .error__img:not(:last-child) {
@@ -23,21 +21,10 @@
 }
 
 .error__link {
-    position: relative;
-    color: var(--pallette-white);
+    color: var(--pallette-supernova);
+    border-bottom: 2px solid var(--pallette-supernova);
 }
 
-.error__link::before {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--pallette-white);
-    content: '';
-    transition: width var(--transition);
-}
-
-.error__link:hover::before {
-    width: 100%;
+.error__link:hover {
+    border-bottom: none;
 }
