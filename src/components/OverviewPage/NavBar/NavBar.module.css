@@ -1,0 +1,21 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.navbar__btn {
+    transition: color var(--transition);
+}
+
+.navbar__btn:not([disabled]):hover {
+    color: var(--pallette-supernova);
+}
+
+.navbar__btn[disabled] {
+    cursor: not-allowed;
+}

@@ -1,0 +1,32 @@
+.loader {
+    display: flex;
+    align-items: center;
+}
+
+.loader > *:not(:last-child) {
+    margin-right: 10px;
+}
+
+.loader__inner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid;
+    border-color: var(--pallette-supernova) transparent;
+    border-radius: 50%;
+    animation: rotation 1s linear infinite;
+}
+
+.loader__text {
+    font-size: 14px;
+    font-weight: 700;
+}
+  
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+} 

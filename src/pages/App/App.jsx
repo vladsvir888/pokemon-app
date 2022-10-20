@@ -1,22 +1,21 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import routes from '../../routes';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
-import PageLayout from '../PageLayout';
-import ErrorPage from '../ErrorPage';
+import routes from '../../routes';
 
 const App = () => {
   return (
     <>
+      <Header />
       <Routes>
-        <Route element={<PageLayout />}>
-          {routes.map(route => 
-            <Route key={route.element} path={route.path} element={route.element} />
-          )}
-        </Route>
-        <Route path="*" element={<ErrorPage />} />
+        {routes.map(route => 
+          <Route key={route.element} path={route.path} element={route.element} />
+        )}
       </Routes>
+      <Footer />
     </>
   );
 }

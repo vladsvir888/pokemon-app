@@ -4,14 +4,15 @@
     align-items: center;
 }
 
-.error__heading {
-    font-size: 160px;
-    text-align: center;
-    color: var(--pallette-supernova);
+.error > *:not(:last-child) {
+    margin-bottom: 20px;
 }
 
-.error__img:not(:last-child) {
-    margin-bottom: 20px;
+.error__heading {
+    margin-top: 50px;
+    font-size: 40px;
+    text-align: center;
+    color: var(--pallette-supernova);
 }
 
 .error__paragraph {

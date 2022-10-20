@@ -1,5 +1,6 @@
 import HomePage from '../pages/HomePage';
 import OverviewPage from '../pages/OverviewPage';
+import ErrorPage from '../pages/ErrorPage';
 
 const routes = [
     {
@@ -7,8 +8,12 @@ const routes = [
         element: <HomePage />
     },
     {
-        path: "/overview",
+        path: "/pokemon",
         element: <OverviewPage />
+    },
+    {
+        path: "*",
+        element: <ErrorPage text="Error 404" />
     }
 ];
 

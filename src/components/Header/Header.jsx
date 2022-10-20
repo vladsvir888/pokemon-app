@@ -4,23 +4,33 @@ import cn from 'classnames';
 import Logo from '../Logo';
 import NavMenu from '../NavMenu/NavMenu';
 
-import { HEADER_NAV_ITEMS } from '../../constants';
-
 import styles from './Header.module.css';
 
 import logo from '../../img/pokemon-logo.svg';
 
 const Header = () => {
+    const headerNavItems = [{
+        text: "Home",
+        to: "/",
+        end: true
+    }, {
+        text: "Overview",
+        to: "/pokemon"
+    }, {
+        text: "Search",
+        to: "/search"
+    }];
+
     return (
         <header className="header">
             <div className={cn("container", styles.container)}>
                 <Logo 
-                    classes={styles.logo} 
-                    img={logo} 
-                    text="Home" 
-                    sizes={{width: 200, height: 75}} 
+                    classes={styles.logo}
+                    sizes={{width: 200, height: 75}}
+                    src={logo} 
+                    text="Home Page"
                 />
-                <NavMenu items={HEADER_NAV_ITEMS} />
+                <NavMenu items={headerNavItems} />
             </div>
         </header>
     );

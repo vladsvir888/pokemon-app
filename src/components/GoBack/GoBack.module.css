@@ -1,26 +1,24 @@
-.go__back {
-    position: relative;
-    border: none;
-    background-color: transparent;
-    font-weight: 700;
-    cursor: pointer;
+.back {
+    display: flex;
+    align-items: center;
 }
 
-.go__back:not(:last-child) {
-    margin-bottom: 10px;
+.back:hover .back__text {
+    color: var(--pallette-supernova);
 }
 
-.go__back::before {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+.back:hover .back__icon {
+    fill: var(--pallette-supernova);
+}
+
+.back__text {
+    transition: color var(--transition);
+}
+
+.back__icon {
     width: 20px;
     height: 20px;
-    background: url('../../img/back.svg');
-    content: '';
-}
-
-.go__back span {
-    padding-left: 20px;
+    flex-shrink: 0;
+    margin-right: 5px;
+    transition: fill var(--transition);
 }

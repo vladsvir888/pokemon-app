@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 
 import cn from 'classnames';
 
+import UIImg from '../UI/UIImg';
+
 const Logo = ({ 
     classes, 
     text, 
-    img,
+    src,
     sizes 
 }) => {
     const length = useLocation().pathname.length;
@@ -15,18 +17,23 @@ const Logo = ({
     return (
         <div className={cn("logo", classes)}>
             {length > 1 
-                ? (
-                    <Link to="/">
-                        <span className="visually-hidden">{text}</span>
-                        <img width={sizes.width} height={sizes.height} src={img} alt="" />
-                    </Link>
-                )
-                : (
-                    <>
-                        <span className="visually-hidden">{text}</span>
-                        <img width={sizes.width} height={sizes.height} src={img} alt="" />
-                    </>
-                )
+                ? 
+                <Link to="/">
+                    <UIImg 
+                        width={sizes.width}
+                        height={sizes.height}
+                        src={src}
+                        alt={text}
+                    />
+                </Link>
+                : 
+                <UIImg 
+                    width={sizes.width}
+                    height={sizes.height}
+                    src={src}
+                    alt={text}
+                />
+                
             }
         </div>
     );
