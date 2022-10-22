@@ -1,0 +1,16 @@
+.input {
+    padding: 10px;
+    color: var(--pallette-silver);
+    border: none;
+    border-radius: var(--bdrs10);
+    outline: 2px solid var(--pallette-black);
+    transition: outline var(--transition);
+}
+
+.input:focus {
+    outline: 2px solid var(--pallette-supernova);
+}
+
+.input::placeholder {
+    color: var(--pallette-silver);
+}

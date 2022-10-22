@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
+import ErrorPage from '../ErrorPage';
+
 import NavBar from '../../components/OverviewPage/NavBar';
 import ListPokemons from '../../components/OverviewPage/ListPokemons/ListPokemons';
-
-import { getApiData, getApiPokemons } from '../../utils';
+import UILoader from '../../components/UI/UILoader';
+import UITitle from '../../components/UI/UITitle';
 
 import { API_POKEMON } from '../../constants';
 
-import styles from './OverviewPage.module.css';
+import { getApiData, getApiPokemons } from '../../utils';
+
+import { useFetching } from '../../hooks';
 
 const OverviewPage = () => {
     const [pokemons, setPokemons] = useState(null);
@@ -15,29 +19,34 @@ const OverviewPage = () => {
     const [nextPage, setNextPage] = useState(null);
     const [offset, setOffset] = useState(0);
 
-    const getData = async (url) => {        
+    const [getData, isLoadingData, errorData] = useFetching(async (url) => {
         const res = await getApiData(url);
 
-        if (res) {
-            let arr = (await getApiPokemons(res.results)).map(pokemon => {
-                return {
-                    id: pokemon.id,
-                    name: pokemon.name,
-                    img: pokemon.sprites.front_default
-                }
-            });
+        const arr = (await getApiPokemons(res.results)).map(pokemon => {
+            return {
+                id: pokemon.id,
+                name: pokemon.name,
+                img: pokemon.sprites.front_default
+            }
+        });
 
-            setPokemons(arr);
-            setPrevPage(res.previous);
-            setNextPage(res.next);
-        } else {
-            console.log('ooops');
-        }
-    }
+        setPokemons(arr);
+        setPrevPage(res.previous);
+        setNextPage(res.next);
+    });
 
     useEffect(() => {
         getData(API_POKEMON + `&offset=${offset}`);
     }, [offset]);
+
+    if (errorData) {
+        return (
+            <ErrorPage 
+                text={errorData} 
+                isImg={false} 
+            />
+        )
+    }
 
     return (
         <main className="main">
@@ -49,14 +58,13 @@ const OverviewPage = () => {
                     offset={offset}
                     setOffset={setOffset}
                 />
-                <div className={styles.main__content}>
-                    <h1 className={styles.main__title}>
-                        Browse By Image
-                    </h1>
-                    <ListPokemons 
-                        pokemons={pokemons}
-                    />
-                </div>
+                <section className="main__section">
+                    <UITitle text="Overview" />
+                    {isLoadingData
+                        ? <UILoader />
+                        : <ListPokemons pokemons={pokemons} />
+                    }
+                </section>
             </div>
         </main>
     );

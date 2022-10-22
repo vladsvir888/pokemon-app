@@ -1,0 +1,19 @@
+.main__back:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.main__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.main__item > *:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+@media (max-width: 1024px) {
+    .main__inner {
+        grid-template-columns: 1fr;
+    }
+}

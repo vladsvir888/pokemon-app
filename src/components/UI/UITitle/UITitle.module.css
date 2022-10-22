@@ -1,0 +1,22 @@
+.title {
+    position: relative;
+    display: inline-block;
+}
+  
+.title::before {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 35%;
+    height: 3px;
+    background-color: var(--pallette-supernova);
+    content: '';
+}
+  
+.title:not(:last-child) {
+    margin-bottom: 30px;
+}
+  
+.title:first-letter {
+    text-transform: capitalize;
+}

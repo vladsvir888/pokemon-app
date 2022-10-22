@@ -1,8 +1,8 @@
 import React from 'react';
-import { API_POKEMON } from '../../../constants';
 
-import GoBack from '../../GoBack';
 import UIButton from '../../UI/UIButton';
+
+import { API_POKEMON } from '../../../constants';
 
 import styles from './NavBar.module.css';
 
@@ -25,7 +25,6 @@ const NavBar = ({
 
     return (
         <div className={styles.navbar}>
-            <GoBack />
             <div className={styles.navbar__btns}>
                 <UIButton
                     className={styles.navbar__btn}

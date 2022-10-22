@@ -18,6 +18,8 @@ const ErrorPage = ({text, isImg = true}) => {
             {isImg && 
                 <UIImg 
                     className={styles.error__img}
+                    width="350"
+                    height="200"
                     src={sadPikachuImg}
                     alt="sad pikachu"
                 />

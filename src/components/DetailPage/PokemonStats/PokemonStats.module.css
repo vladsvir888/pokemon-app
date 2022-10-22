@@ -1,0 +1,39 @@
+.title {
+    font-size: 20px;
+}
+
+.list > *:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.name {
+    font-size: 16px;
+}
+
+.name:first-letter {
+    text-transform: capitalize;
+}
+
+.item {
+    display: grid;
+    gap: 35px;
+    grid-template-columns: 30% 1fr;
+}
+
+.item__inner {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 10% 1fr;
+    align-items: center;
+}
+
+.item__graph {
+    height: 14px;
+}
+
+@media (max-width: 576px) {
+    .item {
+        gap: 10px;
+        grid-template-columns: 1fr;
+    }
+}

@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="container">
                 <small className={styles.footer__copyright}>
-                    &copy; Designed and developed by Vladislav Svirydovich
+                    &copy; Developed by Vladislav Svirydovich
                 </small>
             </div>
         </footer>

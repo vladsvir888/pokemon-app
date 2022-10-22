@@ -1,16 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 
+import cn from 'classnames';
+
 import UIButton from '../UI/UIButton';
 
 import styles from './GoBack.module.css';
 
-const GoBack = () => {
+const GoBack = ({classes}) => {
     const navigate = useNavigate();
 
     return (
         <UIButton 
-            className={styles.back}
+            className={cn(classes, styles.back)}
             onClick={() => navigate(-1)}
         >   
             <svg className={styles.back__icon} viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">

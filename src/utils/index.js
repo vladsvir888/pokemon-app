@@ -1,21 +1,7 @@
-/**
- * Получаем данные от api
- * @param {String} url 
- */
 export const getApiData = async (url) => {
-    try {
-        const response = await fetch(url);
-
-        if (!response.ok) {
-            console.log(response.ok)
-            return false;
-        }
-
-        return await response.json();
-    } catch (error) {
-        console.log(error.message);
-        return false;
-    }
+    const response = await fetch(url);
+    
+    return await response.json();
 }
 
 /**
