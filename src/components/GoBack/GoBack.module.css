@@ -1,6 +1,7 @@
 .back {
     display: flex;
     align-items: center;
+    color: var(--back-btn-color);
 }
 
 .back:hover .back__text {
@@ -20,5 +21,6 @@
     height: 20px;
     flex-shrink: 0;
     margin-right: 5px;
+    fill: var(--back-btn-arrow-color);
     transition: fill var(--transition);
 }

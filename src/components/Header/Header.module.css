@@ -1,22 +1,32 @@
 .container {
     display: flex;
     align-items: center;
-}
-
-.container > *:not(:last-child) {
-    margin-right: 80px;
+    justify-content: space-between;
 }
 
 .logo {
     flex-shrink: 0;
+    margin-right: 80px;
 }
 
 .logo img {
     width: 200px;
 }
 
-@media (max-width: 576px) {
+.header__item {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .logo {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
     .container {
+        align-items: flex-start;
         flex-direction: column;
     }
 

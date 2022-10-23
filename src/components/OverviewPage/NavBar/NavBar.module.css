@@ -9,6 +9,7 @@
 }
 
 .navbar__btn {
+    color: var(--navbar-btns-color);
     transition: color var(--transition);
 }
 
@@ -18,5 +19,5 @@
 
 .navbar__btn[disabled] {
     cursor: not-allowed;
-    color: var(--pallette-silver);
+    color: var(--navbar-disabled-btn-color);
 }

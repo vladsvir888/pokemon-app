@@ -5,6 +5,9 @@
   --pallette-white: #fff;
   --pallette-black: #000;
   --pallette-silver: #ccc;
+  --pallette-shark: #303136;
+  --pallette-cod-gray: #1a1a1a;
+  --pallette-gallery: #eee;
 
   /* transitions */
   --transition: 0.3s;
@@ -16,6 +19,29 @@
 
   /* border-radius */
   --bdrs10: 10px;
+
+  /* theme */
+  --body-bg: var(--pallette-alabaster);
+  --main-section-bg: var(--pallette-white);
+  --main-section-color: var(--pallette-black);
+  --ui-title-color: var(--pallette-black);
+  --back-btn-color: var(--pallette-black);
+  --back-btn-arrow-color: var(--pallette-black);
+  --navbar-btns-color: var(--pallette-black);
+  --navbar-disabled-btn-color: var(--pallette-silver);
+  --ui-input-bg: var(--pallette-gallery);
+}
+
+:root.dark {
+  --body-bg: var(--pallette-cod-gray);
+  --main-section-bg: var(--pallette-shark);
+  --main-section-color: var(--pallette-silver);
+  --ui-title-color: var(--pallette-silver);
+  --back-btn-color: var(--pallette-silver);
+  --back-btn-arrow-color: var(--pallette-silver);
+  --navbar-btns-color: var(--pallette-silver);
+  --navbar-disabled-btn-color: var(--pallette-shark);
+  --ui-input-bg: var(--pallette-gallery);
 }
 
 *,
@@ -71,7 +97,7 @@ a[class] {
 body {
   height: 100%;
   font-family: 'Open Sans', sans-serif;
-  background-color: var(--pallette-alabaster);
+  background-color: var(--body-bg);
 }
 
 .visually-hidden {
@@ -124,7 +150,8 @@ body {
 .main__section {
   min-height: 300px;
   padding: 30px;
-  background-color: var(--pallette-white);
+  color: var(--main-section-color);
+  background-color: var(--main-section-bg);
   border-radius: var(--bdrs10);
   box-shadow: 0 3px 12px rgba(0, 0, 0, .07);
 }

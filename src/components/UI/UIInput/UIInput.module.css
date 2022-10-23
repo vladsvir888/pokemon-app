@@ -2,8 +2,9 @@
     padding: 10px;
     color: var(--pallette-silver);
     border: none;
+    background-color: var(--ui-input-bg);
     border-radius: var(--bdrs10);
-    outline: 2px solid var(--pallette-black);
+    outline: 2px solid transparent;
     transition: outline var(--transition);
 }
 

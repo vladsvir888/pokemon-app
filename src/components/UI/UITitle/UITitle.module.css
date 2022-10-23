@@ -1,6 +1,7 @@
 .title {
     position: relative;
     display: inline-block;
+    color: var(--ui-title-color);
 }
   
 .title::before {
