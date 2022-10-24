@@ -2,22 +2,23 @@ import React, { useEffect, useState } from 'react';
 
 import ErrorPage from '../ErrorPage';
 
-import NavBar from '../../components/OverviewPage/NavBar';
 import ListPokemons from '../../components/OverviewPage/ListPokemons/ListPokemons';
 import UILoader from '../../components/UI/UILoader';
 import UITitle from '../../components/UI/UITitle';
 
-import { API_POKEMON } from '../../constants';
+import { API } from '../../constants';
 
 import { getApiData, getApiPokemons } from '../../utils';
 
 import { useFetching } from '../../hooks';
 
+import ReactPaginate from "react-paginate";
+
 const OverviewPage = () => {
     const [pokemons, setPokemons] = useState(null);
-    const [prevPage, setPrevPage] = useState(null);
-    const [nextPage, setNextPage] = useState(null);
     const [offset, setOffset] = useState(0);
+    const [perPage] = useState(20);
+    const [pageCount, setPageCount] = useState(0);
 
     const [getData, isLoadingData, errorData] = useFetching(async (url) => {
         const res = await getApiData(url);
@@ -28,15 +29,20 @@ const OverviewPage = () => {
                 name: pokemon.name,
                 img: pokemon.sprites.front_default
             }
-        });
+        }).slice(offset, offset + perPage);
 
         setPokemons(arr);
-        setPrevPage(res.previous);
-        setNextPage(res.next);
+        setPageCount(Math.round(res.count / perPage));
     });
 
+    const handlePageClick = (e) => {
+        const selectedPage = e.selected;
+
+        setOffset(selectedPage * perPage);
+    };
+
     useEffect(() => {
-        getData(API_POKEMON + `&offset=${offset}`);
+        getData(API + '?limit=1154');
     }, [offset]);
 
     if (errorData) {
@@ -51,13 +57,6 @@ const OverviewPage = () => {
     return (
         <main className="main">
             <div className="container">
-                <NavBar 
-                    getData={getData}
-                    prevPage={prevPage}
-                    nextPage={nextPage}
-                    offset={offset}
-                    setOffset={setOffset}
-                />
                 <section className="main__section">
                     <UITitle text="Overview" />
                     {isLoadingData
@@ -65,6 +64,17 @@ const OverviewPage = () => {
                         : <ListPokemons pokemons={pokemons} />
                     }
                 </section>
+                <ReactPaginate
+                    previousLabel={"Previous"}
+                    nextLabel={"Next"}
+                    breakLabel={"..."}
+                    pageCount={pageCount}
+                    marginPagesDisplayed={1}
+                    pageRangeDisplayed={2}
+                    onPageChange={handlePageClick}
+                    containerClassName={"pagination"}
+                    activeClassName={"active"}
+                />
             </div>
         </main>
     );
