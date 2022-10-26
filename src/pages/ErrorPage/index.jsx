@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 
 import cn from 'classnames';
 
-import UIImg from '../../components/UI/UIImg';
+import UIImg from 'components/UI/UIImg';
 
 import styles from './ErrorPage.module.css';
 
-import sadPikachuImg from '../../img/sad-pikachu.gif';
+import sadPikachuImg from 'img/sad-pikachu.gif';
 
-const ErrorPage = ({text, isImg = true}) => {
+const ErrorPage = ({
+    text, 
+    isImg = true
+}) => {
     return (
         <div className={cn("container", styles.error)}>
             <h1 className={styles.error__heading}>

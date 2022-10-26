@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import UIImg from '../../UI/UIImg';
+import UIImg from 'components/UI/UIImg';
 
 import styles from './ListPokemons.module.css';
 
@@ -18,7 +18,7 @@ const List = ({ pokemons }) => {
                         alt={pokemon.name}
                     />
                     <h2 className={styles.heading}>
-                        <Link className={styles.link} to={`/pokemon/${pokemon.id}`}>
+                        <Link className={styles.link} to={`/pokemon/${pokemon.name}`}>
                             {pokemon.name}
                         </Link>
                     </h2>

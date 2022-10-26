@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
-import ErrorPage from '../ErrorPage';
+import ErrorPage from 'pages/ErrorPage';
 
-import BasicPokemonInfo from '../../components/DetailPage/BasicPokemonInfo';
-import PokemonStats from '../../components/DetailPage/PokemonStats';
-import GoBack from '../../components/GoBack';
-import UILoader from '../../components/UI/UILoader';
-import UITitle from '../../components/UI/UITitle';
+import BasicPokemonInfo from 'components/DetailPage/BasicPokemonInfo';
+import PokemonStats from 'components/DetailPage/PokemonStats';
+import GoBack from 'components/GoBack';
+import UILoader from 'components/UI/UILoader';
+import UITitle from 'components/UI/UITitle';
 
-import { API } from '../../constants';
+import { API } from 'constants';
 
-import { getApiData } from '../../utils';
+import { getApiData } from 'utils';
 
-import { useFetching } from '../../hooks';
+import { useFetching } from 'hooks';
 
 import styles from './DetailPage.module.css';
 

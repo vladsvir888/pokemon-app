@@ -1,4 +1,4 @@
-import { DARK_MODE } from "../constants";
+import { DARK_MODE } from "store/constants";
 
 export const handledarkMode = (value) => { // value - true или false
     localStorage.setItem('darkmode', value);

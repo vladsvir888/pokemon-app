@@ -1,4 +1,4 @@
-import { DARK_MODE } from "../constants";
+import { DARK_MODE } from "store/constants";
 
 const initialState = {
     // проверяем режим из локального хранилища, если ложно, то будет ложно, иначе верно

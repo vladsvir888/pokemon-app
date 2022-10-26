@@ -1,8 +1,8 @@
-import HomePage from '../pages/HomePage';
-import OverviewPage from '../pages/OverviewPage';
-import ErrorPage from '../pages/ErrorPage';
-import DetailPage from '../pages/DetailPage';
-import SearchPage from '../pages/SearchPage';
+import HomePage from 'pages/HomePage';
+import OverviewPage from 'pages/OverviewPage';
+import ErrorPage from 'pages/ErrorPage';
+import DetailPage from 'pages/DetailPage';
+import SearchPage from 'pages/SearchPage';
 
 const routes = [
     {

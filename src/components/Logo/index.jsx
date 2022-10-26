@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import cn from 'classnames';
 
-import UIImg from '../UI/UIImg';
+import UIImg from 'components/UI/UIImg';
 
 const Logo = ({ 
     classes, 

@@ -2,8 +2,9 @@ import React from 'react';
 
 import cn from 'classnames';
 
+import UIInput from 'components/UI/UIInput';
+
 import styles from './DarkModeSwitcher.module.css';
-import UIInput from '../UI/UIInput';
 
 const DarkModeSwitcher = ({
     switchDarkMode,

@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
-
-import ErrorPage from '../ErrorPage';
-
-import ListPokemons from '../../components/OverviewPage/ListPokemons/ListPokemons';
-import UILoader from '../../components/UI/UILoader';
-import UITitle from '../../components/UI/UITitle';
-
-import { API } from '../../constants';
-
-import { getApiData, getApiPokemons } from '../../utils';
-
-import { useFetching } from '../../hooks';
-
 import ReactPaginate from "react-paginate";
+
+import ErrorPage from 'pages/ErrorPage';
+
+import ListPokemons from 'components/OverviewPage/ListPokemons';
+import UILoader from 'components/UI/UILoader';
+import UITitle from 'components/UI/UITitle';
+
+import { API } from 'constants';
+
+import { getApiData, getApiPokemons } from 'utils';
+
+import { useFetching } from 'hooks';
 
 const OverviewPage = () => {
     const [pokemons, setPokemons] = useState(null);
@@ -25,14 +24,13 @@ const OverviewPage = () => {
 
         const arr = (await getApiPokemons(res.results)).map(pokemon => {
             return {
-                id: pokemon.id,
                 name: pokemon.name,
                 img: pokemon.sprites.front_default
             }
-        }).slice(offset, offset + perPage);
+        }).slice(offset, offset + perPage); // возвращаем каждых 20 новых покемонов
 
         setPokemons(arr);
-        setPageCount(Math.round(res.count / perPage));
+        setPageCount(Math.ceil(res.count / perPage));
     });
 
     const handlePageClick = (e) => {

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 
 import cn from 'classnames';
 
-import UIButton from '../UI/UIButton';
+import UIButton from 'components/UI/UIButton';
 
 import styles from './GoBack.module.css';
 

@@ -3,15 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import cn from 'classnames';
 
-import { handledarkMode } from '../../store/actions/darkModeAction';
+import { handledarkMode } from 'store/actions/darkModeAction';
 
-import Logo from '../Logo';
-import NavMenu from '../NavMenu/NavMenu';
-import DarkModeSwitcher from '../DarkModeSwitcher';
+import Logo from 'components/Logo';
+import NavMenu from 'components/NavMenu';
+import DarkModeSwitcher from 'components/DarkModeSwitcher';
 
 import styles from './Header.module.css';
 
-import logo from '../../img/pokemon-logo.svg';
+import logo from 'img/pokemon-logo.svg';
 
 const Header = () => {
     const root = document.documentElement;

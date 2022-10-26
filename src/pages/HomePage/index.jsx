@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-import UIImg from '../../components/UI/UIImg';
+import UIImg from 'components/UI/UIImg';
 
 import styles from './HomePage.module.css';
 
-import reviewImg from '../../img/01.jpg';
-import searchImg from '../../img/02.jpg';
+import reviewImg from 'img/01.jpg';
+import searchImg from 'img/02.jpg';
 
 const HomePage = () => {
     return (

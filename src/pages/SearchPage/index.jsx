@@ -2,18 +2,19 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import cn from 'classnames';
+import { debounce } from 'lodash';
 
-import ErrorPage from '../ErrorPage';
+import ErrorPage from 'pages/ErrorPage';
 
-import UIInput from '../../components/UI/UIInput';
-import UITitle from '../../components/UI/UITitle';
-import UILoader from '../../components/UI/UILoader';
+import UIInput from 'components/UI/UIInput';
+import UITitle from 'components/UI/UITitle';
+import UILoader from 'components/UI/UILoader';
 
-import { API } from '../../constants';
+import { API } from 'constants';
 
-import { getApiData } from '../../utils';
+import { getApiData } from 'utils';
 
-import { useFetching } from '../../hooks';
+import { useFetching } from 'hooks';
 
 import styles from './SearchPage.module.css';
 

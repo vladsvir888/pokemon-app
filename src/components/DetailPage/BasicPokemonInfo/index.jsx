@@ -1,6 +1,6 @@
 import React from 'react';
 
-import UIImg from '../../UI/UIImg';
+import UIImg from 'components/UI/UIImg';
 
 import styles from './BasicPokemonInfo.module.css';
 
