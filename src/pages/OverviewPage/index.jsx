@@ -7,7 +7,7 @@ import ListPokemons from 'components/OverviewPage/ListPokemons';
 import UILoader from 'components/UI/UILoader';
 import UITitle from 'components/UI/UITitle';
 
-import { API } from 'constants';
+import { API, LIMIT } from 'constants';
 
 import { getApiData, getApiPokemons } from 'utils';
 
@@ -17,7 +17,7 @@ const OverviewPage = () => {
     const [pokemons, setPokemons] = useState(null);
     const [offset, setOffset] = useState(0);
     const [perPage] = useState(20);
-    const [pageCount, setPageCount] = useState(0);
+    const [pageCount] = useState(Math.ceil(LIMIT / perPage));
 
     const [getData, isLoadingData, errorData] = useFetching(async (url) => {
         const res = await getApiData(url);
@@ -27,10 +27,9 @@ const OverviewPage = () => {
                 name: pokemon.name,
                 img: pokemon.sprites.front_default
             }
-        }).slice(offset, offset + perPage); // возвращаем каждых 20 новых покемонов
+        })
 
         setPokemons(arr);
-        setPageCount(Math.ceil(res.count / perPage));
     });
 
     const handlePageClick = (e) => {
@@ -40,7 +39,7 @@ const OverviewPage = () => {
     };
 
     useEffect(() => {
-        getData(API + '?limit=1154');
+        getData(`${API}?limit=${perPage}&offset=${offset}`);
     }, [offset]);
 
     if (errorData) {

@@ -10,7 +10,7 @@ import UIInput from 'components/UI/UIInput';
 import UITitle from 'components/UI/UITitle';
 import UILoader from 'components/UI/UILoader';
 
-import { API } from 'constants';
+import { API, LIMIT } from 'constants';
 
 import { getApiData } from 'utils';
 
@@ -29,7 +29,7 @@ const SearchPage = () => {
     });
 
     useEffect(() => {
-        getData(API + '?limit=1154');
+        getData(`${API}?limit=${LIMIT}`);
     }, []);
 
     const filteredPokemons = useMemo(() => {
