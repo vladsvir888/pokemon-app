@@ -6,7 +6,7 @@ Live: [View Site](https://pokemon-app-vs8.netlify.app/)
 
 ---
 
-## Available Scripts
+## 💻 Available Scripts
 
 ```bash
 npm i                    # install dependencies
@@ -17,10 +17,10 @@ npm run build            # builds the app for production
 ---
 
 ## 📊 Lighthouse report
-![Lighthouse report](https://vladsvir.ru/img/lighthouse.png "Lighthouse report")
+![Lighthouse report](https://vladsvir.ru/img/lighthouse-report.jpg "Lighthouse report")
 
 ---
 
-## 📄 Using API
+## 📄 API
 
 [Pokeapi](https://pokeapi.co/)
